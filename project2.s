@@ -102,19 +102,22 @@ convert_int:
    beqz $s4, print_result
    beq $s4, $t1, print_result
    slti $t6, $s4, 58
-   bne $t6, $zero, base_ten_conv
+   bne $t6, $zero, ten_conv
    slti $t6, $s4, 88
-   bne $t6, $zero, base_33_upper_conv
+   bne $t6, $zero, 33_upper_conv
    slti $t6, $s4, 120
-   bne $t6, $zero, base_33_lower_conv
+   bne $t6, $zero, 33_lower_conv
 	
-base_ten_conv:
+ten_conv:
    addi $s4, $s4, -48
    j result
 
-base_33_upper_conv:
+33_upper_conv:
    addi $s4, $s4, -55
    j result
+   
+33_lower_conv:
+   addi $s4, $s4, -87
    
 
 
