@@ -120,9 +120,15 @@ ten_conv:
    addi $s4, $s4, -87
 
 result:
-	beq $s0, $s3, first_digit
-	beq $s0, $s2, second_digit
-	beq $s0, $s1, third_digit
-	beq $s0, $s5, fourth_digit
+  beq $s0, $s3, first_digit
+  beq $s0, $s2, second_digit
+  beq $s0, $s1, third_digit
+  beq $s0, $s5, fourth_digit
+
+first_digit:
+   li $s6, 32768 # (base N)^3
+   mult $s4, $s6
+   mflo $s7
+   add $t7, $t7, $s7
 
 
