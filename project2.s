@@ -76,11 +76,13 @@ check_str:
 	bne $t6, $zero,forward
 	slti $t6, $t5, 65
 	bne $t6, $zero,invalid_input
-	slti $t6, $t5, 87                 # 65 + N - 10
+	slti $t6, $t5, 87                
 	bne $t6, $zero, forward
 	slti $t6, $t5, 97
 	bne $t6, $zero, invalid_input
-	slti $t6, $t5, 119                # 97 + N - 10
+	slti $t6, $t5, 119    
+	bne $t6, $zero, forward
+	bgt $t5, 119, invalid_input  
 
    
 
