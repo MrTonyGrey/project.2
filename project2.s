@@ -22,8 +22,15 @@ invalid_input:
   li $v0, 4
   syscall
   j exit
+#0utput if the the user input is too long
 too_long_input:
   la $a0, lngint
   li $v0, 4
   syscall
   j exit
+#Loads user input
+main:
+  li $v0, 8
+  la $a0, userint
+  li $a1, 250
+  syscall
