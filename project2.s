@@ -134,7 +134,7 @@ first_digit:
    addi $a0, $a0, 1
    j convert_int
 second_digit:
-       li $s6, 1024 # (base N)^2
+       li $s6, 1024 # (base 32)^2
        mult $s4, $s6
        mflo $s7
        add $t7, $t7, $s7
@@ -142,5 +142,10 @@ second_digit:
        addi $a0, $a0, 1
        j convert_input
       
+ third_digit:
+       li $s6, 32 # (base N)^1
+       mult $s4, $s6
+       mflo $s7
+       add $t7, $t7, $s7
 
 
