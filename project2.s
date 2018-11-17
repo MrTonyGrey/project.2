@@ -162,3 +162,4 @@ print_result:
     syscall
 j exit
 
+jr $ra
