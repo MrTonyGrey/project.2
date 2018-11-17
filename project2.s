@@ -12,7 +12,7 @@ exit:
   
 #Outputs if the input is empty
 empty_input:
-  la $a0, emptint
+  la $a0, empint
   li $v0, 4
   syscall
   j exit
