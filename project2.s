@@ -57,6 +57,13 @@ size_iter:
    addi $a0, $a0, 1
    addi $t0, $t0, 1
    j size_iter
+   
+len_found:
+	beqz $t0, empty_input
+	slti $t3, $t0, 5
+	beqz $t3, too_long_input
+	move $a0, $t4
+
 
    
 
