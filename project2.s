@@ -59,10 +59,11 @@ size_iter:
    j size_iter
    
 len_found:
-	beqz $t0, empty_input
-	slti $t3, $t0, 5
-	beqz $t3, too_long_input
-	move $a0, $t4
+   beqz $t0, empty_input
+   slti $t3, $t0, 5
+   beqz $t3, too_long_input
+   move $a0, $t4
+   j check_str
 
 
    
