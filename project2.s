@@ -107,6 +107,10 @@ convert_int:
 	bne $t6, $zero, base_33_upper_conv
 	slti $t6, $s4, 120
 	bne $t6, $zero, base_33_lower_conv
+	
+base_ten_conv:
+   addi $s4, $s4, -48
+   j result
 
    
 
