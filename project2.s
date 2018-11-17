@@ -22,3 +22,8 @@ invalid_input:
   li $v0, 4
   syscall
   j exit
+too_long_input:
+  la $a0, lngint
+  li $v0, 4
+  syscall
+  j exit
