@@ -1,3 +1,4 @@
+# N = 32
 .data
   empint:   .asciiz "Input is empty." # Prints out if input is empty
   lngint:    .asciiz "Input is too long." # Prints out if input is too long
@@ -75,6 +76,11 @@ check_str:
 	bne $t6, $zero,forward
 	slti $t6, $t5, 65
 	bne $t6, $zero,invalid_input
+	slti $t6, $t5, 87                 # 65 + N - 10
+	bne $t6, $zero, forward
+	slti $t6, $t5, 97
+	bne $t6, $zero, invalid_input
+	slti $t6, $t5, 119                # 97 + N - 10
 
    
 
