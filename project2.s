@@ -98,20 +98,23 @@ convert:
 	li $s5, 0
 	
 convert_int:
-	lb $s4, 0($a0)
-	beqz $s4, print_result
-	beq $s4, $t1, print_result
-	slti $t6, $s4, 58
-	bne $t6, $zero, base_ten_conv
-	slti $t6, $s4, 88
-	bne $t6, $zero, base_33_upper_conv
-	slti $t6, $s4, 120
-	bne $t6, $zero, base_33_lower_conv
+   lb $s4, 0($a0)
+   beqz $s4, print_result
+   beq $s4, $t1, print_result
+   slti $t6, $s4, 58
+   bne $t6, $zero, base_ten_conv
+   slti $t6, $s4, 88
+   bne $t6, $zero, base_33_upper_conv
+   slti $t6, $s4, 120
+   bne $t6, $zero, base_33_lower_conv
 	
 base_ten_conv:
    addi $s4, $s4, -48
    j result
 
+base_33_upper_conv:
+   addi $s4, $s4, -55
+   j result
    
 
 
