@@ -51,10 +51,12 @@ input_len:
   addi $t1, $t1, 10
   add $t4, $t4, $a0
 size_iter:
-	lb $t2, 0($a0)
-	beqz $t2, after_size_found
-	beq $t2, $t1, after_size_found
-	addi $a0, $a0, 1
+   lb $t2, 0($a0)
+   beqz $t2, after_size_found
+   beq $t2, $t1, after_size_found
+   addi $a0, $a0, 1
+   addi $t0, $t0, 1
+   j size_iter
 
    
 
