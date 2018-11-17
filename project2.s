@@ -45,5 +45,9 @@ del_left_pad:
 delete_first_char:
    addi $a0, $a0, 1
    j del_left_pad
-   
+
+input_len:
+   addi $t0, $t0, 0
+   addi $t1, $t1, 10
+   add $t4, $t4, $a0
 
