@@ -36,8 +36,14 @@ main:
   syscall
   
 del_left_pad:
-	li $t8, 32 # space
-	lb $t9, 0($a0)
-	beq $t8, $t9, delete_first_char
-	move $t9, $a0 #Copies $t9 to $a0
-	j input_len #jump to the input len
+   li $t8, 32 # space
+   lb $t9, 0($a0)
+   beq $t8, $t9, delete_first_char
+   move $t9, $a0 #Copies $t9 to $a0
+   j input_len #jump to the input len
+   
+delete_first_char:
+   addi $a0, $a0, 1
+   j del_left_pad
+   
+
