@@ -126,9 +126,12 @@ result:
   beq $s0, $s5, fourth_digit
 
 first_digit:
-   li $s6, 32768 # (base N)^3
+   li $s6, 32768 # (base 32)^3
    mult $s4, $s6
    mflo $s7
    add $t7, $t7, $s7
+   addi $s0, $s0, -1
+   addi $a0, $a0, 1
+   j convert_int
 
 
