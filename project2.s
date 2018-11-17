@@ -118,6 +118,11 @@ ten_conv:
    
 33_lower_conv:
    addi $s4, $s4, -87
-   
+
+result:
+	beq $s0, $s3, first_digit
+	beq $s0, $s2, second_digit
+	beq $s0, $s1, third_digit
+	beq $s0, $s5, fourth_digit
 
 
