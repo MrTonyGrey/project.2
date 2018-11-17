@@ -102,6 +102,11 @@ convert_int:
 	beqz $s4, print_result
 	beq $s4, $t1, print_result
 	slti $t6, $s4, 58
+	bne $t6, $zero, base_ten_conv
+	slti $t6, $s4, 88
+	bne $t6, $zero, base_33_upper_conv
+	slti $t6, $s4, 120
+	bne $t6, $zero, base_33_lower_conv
 
    
 
