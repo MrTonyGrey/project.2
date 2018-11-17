@@ -67,22 +67,25 @@ len_found:
    j check_str
    
 check_str:
-	lb $t5, 0($a0)
-	beqz $t5, convert
-	beq $t5, $t1, convert
-	slti $t6, $t5, 48
-	bne $t6, $zero,invalid_input
-	slti $t6, $t5, 58
-	bne $t6, $zero,forward
-	slti $t6, $t5, 65
-	bne $t6, $zero,invalid_input
-	slti $t6, $t5, 87                
-	bne $t6, $zero, forward
-	slti $t6, $t5, 97
-	bne $t6, $zero, invalid_input
-	slti $t6, $t5, 119    
-	bne $t6, $zero, forward
-	bgt $t5, 119, invalid_input  
+   lb $t5, 0($a0)
+   beqz $t5, convert
+   beq $t5, $t1, convert
+   slti $t6, $t5, 48
+   bne $t6, $zero,invalid_input
+   slti $t6, $t5, 58
+   bne $t6, $zero,forward
+   slti $t6, $t5, 65
+   bne $t6, $zero,invalid_input
+   slti $t6, $t5, 87                
+   bne $t6, $zero, forward
+   slti $t6, $t5, 97
+   bne $t6, $zero, invalid_input
+   slti $t6, $t5, 119    
+   bne $t6, $zero, forward
+   bgt $t5, 119, invalid_input
+forward:
+   addi $a0, $a0, 1
+   j check_str
 
    
 
